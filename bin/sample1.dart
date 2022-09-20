@@ -49,7 +49,7 @@ class Car{
 }
 }
 //creating object...syntax{classname object name=classname()}
-void main()
+void main3()
 {
   Car alto=Car();
   //calling object for instance variable....syntax{object name.variable}
@@ -68,5 +68,31 @@ void main()
   print('car mileage is ${eon.mileage=15.7}');
   print('swift is model of ${Car.brand='hyundai'}');
   eon.show();
+  print('*****************************************************************');
+}
+
+class Student{
+  //instance variables
+  String?name;
+  late int age;
+  late int rollno;
+  late double mark;
+
+  //static variables
+
+  static String course='flutter';
+  static String centre='luminar';
+
+}
+void main(){
+  //create object
+  Student f= Student();
+  //calling object for instance variable....syntax{object name.variable}
+  print('student name is ${f.name='favaz'}');
+  print("student age is ${f.age=21}");
+  print('student mark is ${f.mark=98.5}');
+  //calling object for static variable....syntax{classname.variable}
+  print('opted for ${Student.course} course');
+  print('studying in ${Student.centre} technolab');
 
 }
