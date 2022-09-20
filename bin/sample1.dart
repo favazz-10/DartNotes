@@ -1,6 +1,8 @@
+
+//variable example
 import 'dart:io';
 
-void main(){
+void main2(){
   String name = 'favaz';
   int age = 21;
   double mark = 8.5;
@@ -24,6 +26,47 @@ void main(){
   print('$d=${a-b}');
   print('$m=${a*b}');
   print('$D=${a/b}');
+}
 
+  //types of variables
+class Car{
+  //instance variables
+  String?color; //null aware operator
+  late int year; //value will be used later
+  double?mileage; //value may or may not be added
+
+  //static variables
+
+  static String brand="maruti"; //brand is fixed...so static
+
+  //local variables
+
+  void show(){
+
+    String engine='petrol';
+    print('Engine type is $engine');
+
+}
+}
+//creating object...syntax{classname object name=classname()}
+void main()
+{
+  Car alto=Car();
+  //calling object for instance variable....syntax{object name.variable}
+  print('car color is ${alto.color='grey'}');
+  print('model year is ${alto.year=2020}');
+  print('car mileage is ${alto.mileage=16.7}');
+  //calling object for static variable....syntax{classname.variable}
+  print('alto is model of ${Car.brand}');
+  alto.show();
+
+  print('***********************************');
+
+  Car eon=Car();
+  print('car color is ${eon.color='red'}');
+  print('model year is ${eon.year=2021}');
+  print('car mileage is ${eon.mileage=15.7}');
+  print('swift is model of ${Car.brand='hyundai'}');
+  eon.show();
 
 }
