@@ -84,7 +84,7 @@ class Student{
   static String centre='luminar';
 
 }
-void main(){
+void main4(){
   //create object
   Student f= Student();
   //calling object for instance variable....syntax{object name.variable}
@@ -94,5 +94,114 @@ void main(){
   //calling object for static variable....syntax{classname.variable}
   print('opted for ${Student.course} course');
   print('studying in ${Student.centre} technolab');
+}
+
+
+//(var and dynammic example)
+
+void main5(){
+
+  var name1='favaz';
+   name1='nihal';
+   //name1=20;
+
+  dynamic name2='john';
+  name2='myname';
+   name2=30;
+
+
+  print('my name is $name1');
+}
+
+//final(used to fix a value..ie..cannot be changed later)
+
+void main6(){
+  final dob='26/03/2001';  //value fixed at runtime
+
+  const year='2020';    //value fixed at compile time
 
 }
+//boolean datatype keyword => bool
+
+void main7()
+{
+  String storedusername="Admin";
+  String enteredusername="Admin";
+  int storedpassword=1234;
+  int enteredpassword=1234;
+
+  print(storedusername==enteredusername && storedpassword==enteredpassword);
+}
+
+//function for mathematical operations
+
+void sum1(){
+  int a=10,b=20;
+  print('sum=${a+b}');
+}
+void difference1(){
+  int a=10,b=20;
+  print('difference=${a-b}');
+}
+void multiplication1(){
+  int a=10,b=20;
+  print('multiplication=${a*b}');
+}
+void division1(){
+  double a=10,b=20;
+  print('division=${a/b}');
+}
+
+void main8(){
+  sum1();
+  difference1();
+  multiplication1();
+  division1();
+}
+
+//types of functions
+//1. default function..syntax = returntype functionname(){}
+//2. parameterized function..syntax= returntype functionname(parameters){}
+
+//example1
+
+void sum(int a, int b){
+
+  print('sum=${a+b}');
+}
+void difference(int a, int b){
+
+  print('difference=${a-b}');
+}
+void multiplication(int a, int b){
+
+  print('multiplication=${a*b}');
+}
+void division(int a, int b){
+
+  print('division=${a/b}');
+}
+
+void main9(){
+  sum(40,80);
+  difference(70,20);
+  multiplication(2,4);
+  division(10,2);
+}
+
+//example2
+
+void student(String name,int age,double mark){
+  print('name of the student is $name');
+  print('age of  $name is $age');
+  print('mark of $name is $mark');
+
+}
+void main(){
+  student('favaz', 21, 81.4 );
+
+}
+
+
+
+
