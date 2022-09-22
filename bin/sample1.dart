@@ -28,9 +28,11 @@ void main2(){
   print('$D=${a/b}');
 }
 
-  //types of variables
+
+//types of variables(example)
 class Car{
   //instance variables
+
   String?color; //null aware operator
   late int year; //value will be used later
   double?mileage; //value may or may not be added
@@ -48,7 +50,10 @@ class Car{
 
 }
 }
+
+
 //creating object...syntax{classname object name=classname()}
+//example1
 void main3()
 {
   Car alto=Car();
@@ -71,8 +76,10 @@ void main3()
   print('*****************************************************************');
 }
 
+//example2
 class Student{
   //instance variables
+
   String?name;
   late int age;
   late int rollno;
@@ -114,6 +121,7 @@ void main5(){
 }
 
 //final(used to fix a value..ie..cannot be changed later)
+//example
 
 void main6(){
   final dob='26/03/2001';  //value fixed at runtime
@@ -121,7 +129,10 @@ void main6(){
   const year='2020';    //value fixed at compile time
 
 }
+
+
 //boolean datatype keyword => bool
+//example
 
 void main7()
 {
@@ -134,6 +145,7 @@ void main7()
 }
 
 //function for mathematical operations
+//example
 
 void sum1(){
   int a=10,b=20;
@@ -160,12 +172,12 @@ void main8(){
 }
 
 //types of functions
-//1. default function..syntax = returntype functionname(){}
-//2. parameterized function..syntax= returntype functionname(parameters){}
+//1. default function..syntax = return type function name(){}
+//2. parameterized function..syntax= return type function name(parameters){}
 
 //example1
 
-void sum(int a, int b){
+void sum(int a, int b){      //int a and b are known as formal parameters/arguments
 
   print('sum=${a+b}');
 }
@@ -183,7 +195,7 @@ void division(int a, int b){
 }
 
 void main9(){
-  sum(40,80);
+  sum(40,80);        //passed values(40 and 80) are known as actual parameters/arguments
   difference(70,20);
   multiplication(2,4);
   division(10,2);
@@ -197,10 +209,127 @@ void student(String name,int age,double mark){
   print('mark of $name is $mark');
 
 }
-void main(){
+void main10(){
   student('favaz', 21, 81.4 );
 
 }
+
+
+//arithmetic operations
+
+void main11(){
+
+  int a=10,b=20;
+
+  print('a+b=${a+b}');
+  print('a-b=${a-b}');
+  print('a*b=${a*b}');
+  print('a/b=${a/b}');
+  print('a~/b=${a~/b}');  // (~/) is used to get the division without decimal point
+  print('a%b=${a%b}');  // (%) is used to get the reminder
+  print('-(a+b)=${-(a+b)}');
+}
+
+//assignment operators
+
+void main12(){
+  dynamic a=10,b=20;
+  a=b; // value of b is assigned to a (so a will be changed to 20)
+  print('a+=b will be ${a+=b}'); // addition of a and b and the value be stored to a
+  print('a-=b will be ${a-=b}');
+  print('a*=b will be ${a*=b}');
+  print('a/=b will be ${a/=b}');
+  print('a~/=b will be ${a~/=b}');
+  print('a%=b will be ${a%=b}');
+
+}
+
+//unary operators(2 types)
+//1.postfix => eg: a++/a--
+//example
+
+void main13(){
+  int a=10;
+  print(a++);  //in this line a will be printed as 10..in background a=a+1
+  print(a);
+  print(a--);
+}
+//2.prefix => eg: ++a/--a
+//example
+
+void main14(){
+  int a=10;
+  print(++a);
+  print(a);
+  print(--a);
+}
+
+//example2
+
+void main15(){
+  int a=10;
+  print(a++);
+  print(a++);
+  print(a++);
+  print(a++);
+  print(a++);
+  print(a++);
+  print(--a);
+  print(--a);
+  print(--a);
+  print(--a);
+  print(--a);
+  print(--a);
+
+}
+
+//relational operators (output will be true/false)
+
+void main16(){
+  print(50<100);
+  print(50>100);
+  print(50<=100);
+  print(50>=100);
+  print(50==100);
+  print(50!=100);
+}
+
+//logical operators(&&,||,!)
+
+void main17(){
+  int a=10;
+  print(a==100 && a<100);
+  print(a==100 || a<100);
+  print(!(a==100));
+
+}
+
+//bitwise operators(&,/,^)
+void main18() {
+  int a=6;  //binary value=0110
+  int b=5;  //binary value=0101
+
+  print(a&b); //a&b=0100=4
+  print(a|b); //a|b=0111=7
+  print(a^b); //a^b=0011=3
+
+}
+
+//shift operators(2 types)
+//1.signed shift operators({>>}right shift,{<<}left shift)
+
+//example
+
+void main(){
+  int l=13; //0000 1101
+  print(l>>2); //0000 1101 >> 2 => 0000 0011=3
+  print(l<<1); //0000 1101 << 1 => 0001 1010=26
+
+}
+
+
+
+
 
 
 
