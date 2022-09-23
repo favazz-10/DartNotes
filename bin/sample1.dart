@@ -1,5 +1,6 @@
 
 //variable example
+import 'dart:ffi';
 import 'dart:io';
 
 void main2(){
@@ -320,13 +321,81 @@ void main18() {
 
 //example
 
-void main(){
+void main19(){
   int l=13; //0000 1101
   print(l>>2); //0000 1101 >> 2 => 0000 0011=3
   print(l<<1); //0000 1101 << 1 => 0001 1010=26
 
 }
-//end
+
+//type test operators (output true/false)
+//1. is
+
+void main20(){
+  int a=10;
+  print(a is String);
+}
+
+//ternary/conditional operators
+//syntax => condition?true statement:false statement;
+//example1
+void main21(){
+
+  int age=20;
+  String result= age>=18?"eligible to vote":"not eligible to vote";
+  print(result);
+}
+
+//example2
+void main22(){
+  int mark=40;
+  String result=mark<40?"failed":"passed";
+  print(result);
+}
+
+//example program
+void main23(){
+  var uname='admin';
+  var pswrd=1234;
+
+  var login=(uname=='admin' && pswrd==1234)?'login successfull':'login failed';
+  print(login);
+}
+
+//example program(largest of 2 numbers)
+void main24(){
+  var largest=(20>30)?20:30;
+  print('$largest is larger');
+}
+
+//example program(largest of 3 numbers)
+void main() {
+  int a = 2,
+      b = 3,
+      c = 4;
+  var largest=(a>b)?(a>c?a:c):(b>c?b:c);
+  print(largest);
+  
+}
+
+//user input
+
+void main26(){
+  print('enter your name');
+  String?name=stdin.readLineSync();
+  print('hi $name');
+  print('enter your age');
+  int?age=int.parse(stdin.readLineSync()!); // ! is used for null safety
+  print('your age is $age');
+  print('enter your cgpa');
+  double?cgpa=double.parse(stdin.readLineSync()!);
+  print("your cgpa is $cgpa");
+}
+
+
+
+
+
 
 
 
