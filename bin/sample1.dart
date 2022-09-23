@@ -329,7 +329,7 @@ void main19(){
 }
 
 //type test operators (output true/false)
-//1. is
+//1.(is)
 
 void main20(){
   int a=10;
@@ -369,7 +369,7 @@ void main24(){
 }
 
 //example program(largest of 3 numbers)
-void main() {
+void main25() {
   int a = 2,
       b = 3,
       c = 4;
@@ -391,6 +391,46 @@ void main26(){
   double?cgpa=double.parse(stdin.readLineSync()!);
   print("your cgpa is $cgpa");
 }
+
+//example program
+void main27()
+{
+  print('enter the first number');
+  var n1=int.parse(stdin.readLineSync()!);
+  print('enter the second number');
+  var n2=int.parse(stdin.readLineSync()!);
+  var result=(n1>n2)?n1:n2;
+  print('largest number is $result');
+}
+
+//example program
+void main28()
+{
+  print('enter the first number');
+  var a=int.parse(stdin.readLineSync()!);
+  print('enter the second number');
+  var b=int.parse(stdin.readLineSync()!);
+  print('enter the third number');
+  var c=int.parse(stdin.readLineSync()!);
+  var largest=(a>b)?(a>c?a:c):(b>c?b:c);
+  print('largest number is $largest');
+
+}
+
+//example program
+void main()
+{
+  print('enter your name');
+  var name=stdin.readLineSync();
+  print('enter your place');
+  var place=stdin.readLineSync();
+  print('enter your email address');
+  var email=stdin.readLineSync();
+  print('enter your phone number');
+  var ph=int.parse(stdin.readLineSync()!);
+  stdout.write('Hi all, my name is $name and Im coming from $place. My email address is $email and my phone number is $ph ');
+}
+
 
 
 
