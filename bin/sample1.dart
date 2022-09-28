@@ -205,7 +205,7 @@ void main9(){
 //example2
 
 void student(String name,int age,double mark){
-  print('name of the student is $name');
+      print('name of the student is $name');
   print('age of  $name is $age');
   print('mark of $name is $mark');
 
@@ -418,7 +418,7 @@ void main28()
 }
 
 //example program
-void main()
+void main29()
 {
   print('enter your name');
   var name=stdin.readLineSync();
@@ -430,6 +430,173 @@ void main()
   var ph=int.parse(stdin.readLineSync()!);
   stdout.write('Hi all, my name is $name and Im coming from $place. My email address is $email and my phone number is $ph ');
 }
+
+//control statements
+//simple if
+
+void main30()
+{
+  int age=20;
+  if(age>=18) {
+    print('eligible to vote');
+  }
+  print('hi');
+}
+//simple if-else
+void main31()
+{
+  int age=10;
+  if(age>=18) {
+    print('eligible to vote');
+
+  }else{
+    print('not eligible to vote');
+  }
+  print('hi');
+}
+
+//example
+void main32(){
+  print('enter the first no.');
+  var n1=int.parse(stdin.readLineSync()!);
+  print('enter the second no.');
+  var n2=int.parse(stdin.readLineSync()!);
+  if(n1>n2){
+    print('$n1 is greater');
+  }
+  else{
+    print('$n2 is greater');
+  }
+}
+
+//else-if ladder
+void main33(){
+  print('enter the first no.');
+  var a=int.parse(stdin.readLineSync()!);
+  print('enter the second no.');
+  var b=int.parse(stdin.readLineSync()!);
+  print('enter the third no.');
+  var c=int.parse(stdin.readLineSync()!);
+  print('enter the fourth no.');
+  var d=int.parse(stdin.readLineSync()!);
+  if(a>b && a>c && a>d){
+    print('$a is greater');
+  }else if(b>a && b>c && b>d){
+    print('$b is greater');
+  }else if(c>a && c>b && c>d){
+      print('$c is greater');
+    }else{
+    print('$d is greater');
+  }
+}
+
+//example 2
+void main34()
+{
+  print('enter the no. to be checked');
+  var a=int.parse(stdin.readLineSync()!);
+  if(a>0){
+    print('$a is positive');
+  }else if(a==0){
+    print('zero');
+  }else if(a<0){
+    print('$a is negative');
+  }
+}
+
+//switch statement
+
+void main35(){
+  print('enter the mark');
+  var mark=int.parse(stdin.readLineSync()!);
+  switch (mark){
+    case 50:print('just pass');
+    break;
+    case 60:print('d grade');
+    break;
+    case 70:print('c grade');
+    break;
+    case 80:print('b grade');
+    break;
+    case 90:print('a grade');
+    break;
+    default:print('enter the correct mark');
+  }
+}
+
+//for loop
+//syntax => for(initialization;declaration;incr/decr){}
+
+void main36(){
+  for(int i=1;i<=10;i++){
+    print(i);
+  }
+}
+
+//example
+void main37()
+{
+  for(int i=10;i>=1;i--){
+    print(i);
+  }
+}
+
+//example (print even numbers between 1 and 10)
+void main38()
+{
+  for(int i=1;i<=10;i++){
+    if(i%2==0){
+      print(i);
+    }
+  }
+}
+
+//example (print odd numbers between 1 and 10)
+void main39()
+{
+  for(int i=1;i<=10;i++){
+    if(i%2!=0){
+      print(i);
+    }
+  }
+}
+
+//example (sum of first 10 natural numbers)
+void main40() {
+  var sum=0;
+  for(int i=1;i<=10;i++)
+  {
+    sum=sum+i;
+  }
+  print(sum);
+}
+
+//example (print sum of even numbers and odd numbers between 1 and 10)
+void main41(){
+  int esum=0,osum=0;
+  for (int i=1;i<=10;i++){
+    if(i%2==0){
+      esum=esum+i;
+    }else{
+      osum=osum+i;
+    }
+  }
+  print('odd sum=$osum');
+  print('even sum=$esum');
+}
+
+//example (print multiplication table of a number)
+void main(){
+
+
+}
+
+
+
+
+
+
+
 
 
 
