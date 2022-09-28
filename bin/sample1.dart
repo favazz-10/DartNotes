@@ -586,10 +586,99 @@ void main41(){
 }
 
 //example (print multiplication table of a number)
-void main(){
+void main42(){
 
 
 }
+
+//while loop
+void main43()
+{
+  int i=1; //initialization
+  while(i<=10) //condition check
+  {     //statements
+    print(i);
+    i++; //incr/decr
+  }
+}
+
+//example
+void main44()
+{
+  var sum=0;
+  int i=1;
+  while(i<=10)
+    {
+      sum=sum+i;
+      print('$sum');
+      i++;
+    }
+}
+
+//do while loop
+void main45(){
+  int i=10;
+  do{
+    print(i);
+    i--;
+  }while(i<=10);
+
+}
+
+//program to find the given number is prime or not
+void main46(){
+  int temp=0;
+  print('enter a number');
+  int num=int.parse(stdin.readLineSync()!);
+  for(int i=2;i<=num~/2;i++){
+    if(num%i==0){
+      temp=1;
+      break;
+    }
+  }
+  if(temp==0){
+    print('prime number');
+  }else{
+    print('not a prime number');
+  }
+}
+
+//program to find the given number is palindrome or not
+void main47(){
+  int rev=0,rem,temp;
+  print("enter a number");
+  int num=int.parse(stdin.readLineSync()!);
+  temp=num;
+  while(num>0){
+    rem=num%10;
+    rev=rev*10+rem;
+    num=num~/10;
+  }
+  if(rev==temp){
+    print('palindrome');
+  }else{
+    print('not palindrome');
+  }
+}
+
+//fibonacci series(0,1,1,2,3,5,8,13....)
+void main(){
+  int n1=0,n2=1,n3;
+  print(n1);
+  print(n2);
+  for(int i=1;i<=10;i++)
+    {
+      n3=n1+n2;
+      print(n3);
+      n1=n2;
+      n2=n3;
+    }
+}
+
+//factorial of a number
+//armstrong of a number
+
+
 
 
 
