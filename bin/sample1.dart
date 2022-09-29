@@ -587,7 +587,11 @@ void main41(){
 
 //example (print multiplication table of a number)
 void main42(){
-
+  print('enter a number');
+int num=int.parse(stdin.readLineSync()!);
+for(int i=1;i<=10;i++){
+  print('$num*$i=${num*i}');
+}
 
 }
 
@@ -662,7 +666,7 @@ void main47(){
 }
 
 //fibonacci series(0,1,1,2,3,5,8,13....)
-void main(){
+void main48(){
   int n1=0,n2=1,n3;
   print(n1);
   print(n2);
@@ -676,8 +680,92 @@ void main(){
 }
 
 //factorial of a number
-//armstrong of a number
+void main49() {
+  print('Enter a number');
+  int n = int.parse(stdin.readLineSync()!);
+  int result = 1;
+  for (int i = 1; i <= n; i++) {
+    result=result* i;
+  }
+  print('Factorial of $n');
+  print(result);
+}
 
+//armstrong of a number
+void main50(){
+
+}
+
+//break statement
+void main51(){
+  for(int i=1;i<=20;i++){
+    if(i==11){
+      break;
+    }
+    print(i);
+  }
+}
+
+//continue statement (print even numbers between 1 and 20)
+void main52(){
+  for(int i=1;i<=20;i++){
+    if(i%2!=0){
+      continue;
+    }
+    print(i);
+  }
+}
+
+//example (print multiples of 2 and 3 between 1 and 20)
+void main53(){
+  for(int i=1;i<=20;i++){
+    if(i%2!=0 && i%3!=0){
+      continue;
+    }
+    print(i);
+  }
+}
+
+//return statement
+int add(){ //default function with return type(int)
+  int sum=20+20;
+  return sum;
+}
+void main54(){
+  print(add());
+}
+
+//example (parameterized function)
+String show(String data) {
+  return 'hello $data';
+}
+void main55(){
+  print(show('favaz'));
+}
+
+//LIST
+
+//1.fixed length(cannot modify list later)
+//2.growable(can modify later)
+void main56() {
+  List names = ['a', 'b', 'c', 'd'];
+  names.add('e');
+  print(names);
+
+  //list.empty()
+  List a = List.empty(growable: true); //we can add value in empty list if growable is true and cannot add value if growable is false. By default it is false.
+  a.add(10);
+  print(a);
+}
+
+//list.filled()
+void main(){
+  List b=List.filled(6, 'hi',growable: true);
+  b[1]=3;
+  b.add(6);
+  print(b);
+  print('index of 3=${b.indexOf(3)}'); //to print the index of the specified element
+}
 
 
 
