@@ -693,6 +693,21 @@ void main49() {
 
 //armstrong of a number
 void main50(){
+  int n,r,x,sum;
+  print('enter a number');
+  n=int.parse(stdin.readLineSync()!);
+  x=n;
+  sum=0;
+  while(n!=0){
+    r=n%10;
+    sum=sum+(r*r*r);
+    n=n~/10;
+  }
+  if(sum==x){
+    print('armstrong');
+  }else{
+    print('not armstrong');
+  }
 
 }
 
@@ -745,8 +760,8 @@ void main55(){
 
 //LIST
 
-//1.fixed length(cannot modify list later)
-//2.growable(can modify later)
+//1.fixed length list(cannot modify list later)
+//2.growable list(can modify later)
 void main56() {
   List names = ['a', 'b', 'c', 'd'];
   names.add('e');
@@ -759,7 +774,7 @@ void main56() {
 }
 
 //list.filled()
-void main(){
+void main57(){
   List b=List.filled(6, 'hi',growable: true);
   b[1]=3;
   b.add(6);
@@ -767,9 +782,90 @@ void main(){
   print('index of 3=${b.indexOf(3)}'); //to print the index of the specified element
 }
 
+//list.unmodifiable()
+void main58(){
+  List names = ['a', 'b', 'c', 'd'];
+  var a=List.unmodifiable(names);  //cannot modify the list
+  print(a);
+}
+
+//list.from()
+void main59() {
+  List a = List.from([1, 2, 3, 4]);  //growable by default true
+  a.add(5);
+  print(a);
+}
+
+//arrow/lambda function
+//returntype functionname()=>statements;
+//eg: int add()=>return 10+10;
+
+//anonymous function
+//(){statements}; //default anonymous function
+//(parameters){statements}; //parameterized anonymous function
 
 
+//list.generate()
+void main60(){
+ List a=List.generate(9, (index) => index*3);  //index can be any name
+ a.add(3);                                     // growable by default is true
+ print(a);
+}
 
+//properties of List
+void main61(){
+  List a=[1,2,3,4];
+  print(a.length);
+  print(a.first);
+  print(a.last);
+  print(a.contains(4));
+  print(a.indexOf(4));
+  a.add(2);
+  print(a);
+  print(a.lastIndexOf(2));
+  print(a.reversed);
+}
+
+//printing elements of a list one by one
+void main62(){
+  List a=[1,2,5,9,6];
+  for(int i=0;i<a.length;i++){
+    print(a[i]);
+  }
+}
+
+//for in loop (for assigning value to a datatype)
+void main63(){
+  List a=[1,2,5,9,6];
+  for(int i in a){
+    print(i);
+  }
+}
+
+//assignments
+//1.print sum of elements in a list
+void main64(){
+  List<int> a=[1,-3,7,9,0,-6,4,-2,0,10,-8,5];
+  var sum=0;
+  for(int i=0;i<a.length;i++) {
+    sum = sum + a[i];
+  }
+  print(sum);
+}
+
+//2.Print sum of even numbers from above list
+void main(){
+  List<int> a=[1,-3,7,9,0,-6,4,-2,0,10,-8,5];
+  var sum=0;
+  for(int i=0;i<a.length;i++){
+    if(a[i]%2==0){
+      sum=sum+a[i];
+    }
+  }
+print(sum);
+}
+
+//3.
 
 
 
