@@ -1,6 +1,6 @@
 
 //variable example
-import 'dart:ffi';
+import 'dart:collection';
 import 'dart:io';
 
 void main2(){
@@ -853,8 +853,8 @@ void main64(){
   print(sum);
 }
 
-//2.Print sum of even numbers from above list
-void main(){
+//2.Print sum of even numbers from the list
+void main65(){
   List<int> a=[1,-3,7,9,0,-6,4,-2,0,10,-8,5];
   var sum=0;
   for(int i=0;i<a.length;i++){
@@ -865,7 +865,83 @@ void main(){
 print(sum);
 }
 
-//3.
+//3.print the count of zeros,positive and negative values from the list
+void main66(){
+  List<int> a=[1,-3,7,9,0,-6,4,-2,0,10,-8,5];
+}
+
+//QUEUE
+void main67(){
+  Queue<int> a=Queue();
+  a.add(1);
+  a.add(2);
+  a.add(3);
+  a.add(4);
+  print(a);
+  a.addFirst(0);
+  a.addLast(5);
+  print(a);
+  a.removeFirst();
+  a.removeLast();
+  print(a);
+
+  //queue.from()
+  Queue b=Queue.from(a);
+  b.add(5);
+  print(b);
+
+  //queue.of()
+  Queue c=Queue.of(b);
+  print(c);
+
+  //printing elements of a queue one by one
+   for(int i=0;i<c.length;i++){
+     print(c.elementAt(i));
+   }
+
+   //for in loop
+  for(int d in a){
+    print(d);
+  }
+
+  //queue.foreach()
+  a.forEach((e) {
+    print(e);
+  });
+}
+
+//SET
+void main68(){
+  Set a={1,2,3,4,5,3};  //will not print duplicate values
+  print(a);
+
+  //set.from()
+  Set b=Set.from(a);
+  b.add(6);
+  print(b);
+
+  //set.union()  //for combining 2 set and will not print duplicate values
+  print('${a.union(b)}');
+
+  //set.intersection()  //will print only common elements from 2 set
+  print('${a.intersection(b)}');
+
+  //set.difference()
+  print('${a.difference(b)}');
+  print('${b.difference(a)}');
+}
+
+//MAP
+void main(){
+  Map<String,dynamic> a={'rollno':1,'name':'favaz','age':21};
+  print(a);
+  a.forEach((key, value) {
+    // print(key);
+    // print(value);
+    print('$key:$value');
+  });
+}
+
 
 
 
