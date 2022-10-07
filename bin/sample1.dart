@@ -932,7 +932,7 @@ void main68(){
 }
 
 //MAP
-void main(){
+void main69(){
   Map<String,dynamic> a={'rollno':1,'name':'favaz','age':21};
   print(a);
   a.forEach((key, value) {
@@ -943,7 +943,155 @@ void main(){
 }
 
 
+//types of functions
+///1. default function
+void func1(){
+  print('hello');
+}
+///2. parameterized function
+void func2(int a, int b){
+  print('sum=${a+b}');
+}
+///3. function with return type
+String func3(){
+  return 'hello';
+}
+///4. optional parameterized function
+void func4(int a,int b,{int?c}){
+  int sum=a+b+c!;
+  print('$sum');
+}
+///5. optional named parameterized function
+void func5(int a,{required int b,int?c }){
+  int sum=a+b;
+  print('$sum');
+}
+///6. optional parameterized function with default value
+void func6(int a,{int?b,int c=20}){
+  int sum=a+b!+c;
+  print('$sum');
+}
 
+void main70(){
+  func1();
+  func2(10,20);
+  print(func3());
+  func4(10, 20,c:30);
+  func5(20, b: 10);
+  func6(20,b:2);
+}
+
+//create  an optional parameterized function for displaying your details where dob and pincode can be optional
+void details(String name,int age,int ph,{int?dob,int?pincode}){
+  print('enter the name');
+  String name=stdin.readLineSync()!;
+  print('$name');
+  print('enter the age');
+  int age=int.parse(stdin.readLineSync()!);
+  print('enter the phone no');
+  int ph=int.parse(stdin.readLineSync()!);
+
+}
+void main71(){
+
+
+}
+
+//Constructor
+class Sample{
+  String name='favaz';
+  void show(){
+    print('hello');
+  }
+  Sample(){
+    print('default constuctor');
+  }
+}
+void main72(){
+  Sample obj=Sample(); //constructor invoke at the time of object creation
+  obj.show();
+  print(obj.name);
+}
+
+//named constructor
+class Apple{
+  Apple(int a){
+    print('i have $a apple');
+  }
+  Apple.one(String name){
+    print('$name has 3 apples');
+  }
+  Apple.two(String name,int num){
+    print('$name has $num apples');
+  }
+}
+void main73(){
+  var obj1=Apple(2);
+  var obj2=Apple.one('favaz');
+  var obj3=Apple.two('favaz', 2);
+}
+
+//Assert statement
+void main74(){
+  int age=10;
+  // if(age>=18){
+  //   print('u are eligible');
+  // }else{
+  //   print('not eligible');
+  // }
+  assert(age>=18,"age must be >=18");
+  print('thank u');
+}
+
+//example for anonymous function
+void main75(){
+  Set a={1,2,3,4};
+  print(a);
+  a.forEach((ele) {  //ele is an anonymous parameterized function inside the for.Each function
+    print(ele);
+  });
+}
+
+
+//Program
+class Me{
+  Me(String name){
+    print('My name is $name');
+  }
+  Me.one(String email){
+    print('$email is my mail ID');
+  }
+  void show1(){
+    print('My hobbies are eating and sleeping');
+  }
+  Me.two(int ph){
+    print('$ph is my phone number');
+  }
+  void show2(){
+    print('I am currently working as nothing');
+  }
+}
+void main76() {
+  var obj = Me('Muhammed Favaz');
+  var obj2 = Me.one('favaz@gmail.com');
+  var obj3 = Me.two(7356724173);
+  obj.show1();
+  obj.show2();
+}
+
+//Inheritance
+///1. Single Inheritance
+class A{       //parent/super/base class
+  int a=100;
+}
+class B extends A{     //child/sub/derived class
+  int b=200;
+}
+void main(){
+  //no need to create object for class A
+  var obj=B();
+  print('${obj.a + obj.b}');
+}
 
 
 
