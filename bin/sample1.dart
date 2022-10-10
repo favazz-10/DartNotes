@@ -1,8 +1,9 @@
 
-//variable example
+
 import 'dart:collection';
 import 'dart:io';
 
+//variable example
 void main2(){
   String name = 'favaz';
   int age = 21;
@@ -592,7 +593,6 @@ int num=int.parse(stdin.readLineSync()!);
 for(int i=1;i<=10;i++){
   print('$num*$i=${num*i}');
 }
-
 }
 
 //while loop
@@ -866,12 +866,49 @@ print(sum);
 }
 
 //3.print the count of zeros,positive and negative values from the list
-void main66(){
-  List<int> a=[1,-3,7,9,0,-6,4,-2,0,10,-8,5];
+void main66() {
+  List<int> a = [1, -3, 7, 9, 0, -6, 4, -2, 0, 10, -8, 5,];
+  int p = 0,
+      n = 0,
+      z = 0;
+  for (int i = 0; i < a.length; i++) {
+    if (a[i] > 0) {
+      p++;
+    } else if (a[i] < 0) {
+      n++;
+    } else {
+      z++;
+    }
+  }
+  print("Count of positive values : $p");
+  print("Count of negative values : $n");
+  print("Count of zeroes : $z");
+}
+
+//4. print the largest element from the list
+void main67() {
+  List<int> a = [1, -3, 7, 9, 0, -6, 4, -2, 0, 10, -8, 5];
+  var largee=a[0];
+  for(var i=0;i<a.length;i++){
+  if(a[i]>largee){
+  largee=a[i];
+  }}
+  print('${largee}');
+}
+
+//5. print the numbers which are multiples of 2 from the list
+void main68() {
+  List<int> a = [1, -3, 7, 9, 0, -6, 4, -2, 0, 10, -8, 5];
+  print("Multiples of 2 in list : ");
+  for (int i = 0; i < a.length; i++) {
+    if (a[i] % 2 == 0) {
+      print("${a[i]} ");
+    }
+  }
 }
 
 //QUEUE
-void main67(){
+void mainA(){
   Queue<int> a=Queue();
   a.add(1);
   a.add(2);
@@ -911,7 +948,7 @@ void main67(){
 }
 
 //SET
-void main68(){
+void mainB(){
   Set a={1,2,3,4,5,3};  //will not print duplicate values
   print(a);
 
@@ -981,20 +1018,29 @@ void main70(){
   func6(20,b:2);
 }
 
-//create  an optional parameterized function for displaying your details where dob and pincode can be optional
-void details(String name,int age,int ph,{int?dob,int?pincode}){
-  print('enter the name');
-  String name=stdin.readLineSync()!;
-  print('$name');
-  print('enter the age');
-  int age=int.parse(stdin.readLineSync()!);
-  print('enter the phone no');
-  int ph=int.parse(stdin.readLineSync()!);
-
+//create  an optional parameterized function for displaying your details where dob and pincode can be optional.
+//input value at run time
+void details(String name, int age, String email, int phone, {int? pincode, String? dob}) {
+  print("Name : $name");
+  print("Age : $age");
+  print("Email : $email");
+  print("Phone : $phone");
+  print("Pincode : $pincode");
+  print("DOB : $dob");
 }
-void main71(){
 
-
+void main71() {
+  stdout.write("Enter name : ");
+  String name = stdin.readLineSync()!;
+  stdout.write("Enter age : ");
+  int age = int.parse(stdin.readLineSync()!);
+  stdout.write("Enter email : ");
+  String email = stdin.readLineSync()!;
+  stdout.write("Enter phone number : ");
+  int phone = int.parse(stdin.readLineSync()!);
+  stdout.write("Enter DOB : ");
+  String dob = stdin.readLineSync()!;
+  details(name, age, email, phone, dob: dob);
 }
 
 //Constructor
@@ -1082,16 +1128,103 @@ void main76() {
 //Inheritance
 ///1. Single Inheritance
 class A{       //parent/super/base class
-  int a=100;
+  int x=100;
 }
 class B extends A{     //child/sub/derived class
-  int b=200;
+  int y=200;
 }
-void main(){
+void main77(){
   //no need to create object for class A
   var obj=B();
-  print('${obj.a + obj.b}');
+  print('${obj.x + obj.y}');
 }
+
+//example
+class car{
+  void details(String color,double mileage,int model,int seat){
+    print('colour=$color');
+    print('mileage=$mileage');
+    print('model=$model');
+    print('seating cap=$seat');
+  }
+}
+class maruti extends car{
+  String name='swift';
+}
+class hyundai extends car{
+  String name='eon';
+
+}
+void main78(){
+  maruti obj=maruti();
+  print('car name=${obj.name}');
+  obj.details('red', 19, 2017, 5);
+  hyundai obj1=hyundai();
+  print('car name=${obj1.name}');
+  obj.details('white', 17, 2019, 5);
+
+}
+
+///2. Heirarchial Inheritance //1 parent class and 1 or more child class
+class bank{
+  void details(String name,int acc,var ifsc,String acctype){
+    print('name=$name');
+    print('account number=$acc');
+    print('ifsc code=$ifsc');
+    print('account type=$acctype');
+  }
+}
+
+//remaining in branch1 and branch2 dart files!!
+
+///3. Multilevel Inheritance
+class pet{
+  String type='dog';
+}
+class dog extends pet{
+  String breed='bug';
+}
+class puppy extends dog{
+  int age =1;
+}
+void main79(){
+  puppy obj=puppy();
+  print('I have a pet which is a ${obj.type} of breed ${obj.breed}. He is ${obj.age} years old');
+}
+
+//StaticKeyword
+class Ex{
+  String?name;
+  static String course='flutter';
+
+  static void show(){
+    int duration=4;
+    print('Im doing a $duration month $course course at Luminar');
+  }
+}
+void main80(){
+  Ex obj=Ex();
+  print('My name is ${obj.name='favaz'}');
+  Ex.show();
+}
+
+//ThisKeyword
+class demo{
+  String?name;
+  int?age;
+  demo(this.name,this.age);  //this keyword is used when instance variable and parameters are of same name!!
+  void show(){
+    print(name);
+    print(age);
+  }
+}
+void main81(){
+  demo obj=demo('favaz', 21);
+  obj.show();
+}
+
+
+
 
 
 
