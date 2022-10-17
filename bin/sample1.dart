@@ -908,7 +908,7 @@ void main68() {
 }
 
 //QUEUE
-void mainA(){
+void mai69(){
   Queue<int> a=Queue();
   a.add(1);
   a.add(2);
@@ -948,7 +948,7 @@ void mainA(){
 }
 
 //SET
-void mainB(){
+void main70(){
   Set a={1,2,3,4,5,3};  //will not print duplicate values
   print(a);
 
@@ -969,7 +969,7 @@ void mainB(){
 }
 
 //MAP
-void main69(){
+void main71(){
   Map<String,dynamic> a={'rollno':1,'name':'favaz','age':21};
   print(a);
   a.forEach((key, value) {
@@ -1009,7 +1009,7 @@ void func6(int a,{int?b,int c=20}){
   print('$sum');
 }
 
-void main70(){
+void main72(){
   func1();
   func2(10,20);
   print(func3());
@@ -1029,7 +1029,7 @@ void details(String name, int age, String email, int phone, {int? pincode, Strin
   print("DOB : $dob");
 }
 
-void main71() {
+void main73() {
   stdout.write("Enter name : ");
   String name = stdin.readLineSync()!;
   stdout.write("Enter age : ");
@@ -1053,10 +1053,26 @@ class Sample{
     print('default constuctor');
   }
 }
-void main72(){
+void main74(){
   Sample obj=Sample(); //constructor invoke at the time of object creation
   obj.show();
   print(obj.name);
+}
+
+//program to create a constructor with instance and optional variables
+class xyz{
+  String name='favaz';
+  void show(int age,int ph){
+    print('Iam $age years old. My phone number is $ph');
+  }
+  xyz(){
+    print('this is a constructor');
+  }
+}
+void main75(){
+  xyz obj=xyz(); //constructor invoke at the time of object creation
+  print('My name is ${obj.name}');
+  obj.show(21,7356724173);
 }
 
 //named constructor
@@ -1071,14 +1087,14 @@ class Apple{
     print('$name has $num apples');
   }
 }
-void main73(){
+void main76(){
   var obj1=Apple(2);
   var obj2=Apple.one('favaz');
   var obj3=Apple.two('favaz', 2);
 }
 
 //Assert statement
-void main74(){
+void main77(){
   int age=10;
   // if(age>=18){
   //   print('u are eligible');
@@ -1090,7 +1106,7 @@ void main74(){
 }
 
 //example for anonymous function
-void main75(){
+void main78(){
   Set a={1,2,3,4};
   print(a);
   a.forEach((ele) {  //ele is an anonymous parameterized function inside the for.Each function
@@ -1117,7 +1133,7 @@ class Me{
     print('I am currently working as nothing');
   }
 }
-void main76() {
+void main79() {
   var obj = Me('Muhammed Favaz');
   var obj2 = Me.one('favaz@gmail.com');
   var obj3 = Me.two(7356724173);
@@ -1133,7 +1149,7 @@ class A{       //parent/super/base class
 class B extends A{     //child/sub/derived class
   int y=200;
 }
-void main77(){
+void main80(){
   //no need to create object for class A
   var obj=B();
   print('${obj.x + obj.y}');
@@ -1155,7 +1171,7 @@ class hyundai extends car{
   String name='eon';
 
 }
-void main78(){
+void main81(){
   maruti obj=maruti();
   print('car name=${obj.name}');
   obj.details('red', 19, 2017, 5);
@@ -1187,7 +1203,7 @@ class dog extends pet{
 class puppy extends dog{
   int age =1;
 }
-void main79(){
+void main82(){
   puppy obj=puppy();
   print('I have a pet which is a ${obj.type} of breed ${obj.breed}. He is ${obj.age} years old');
 }
@@ -1202,7 +1218,7 @@ class Ex{
     print('Im doing a $duration month $course course at Luminar');
   }
 }
-void main80(){
+void main83(){
   Ex obj=Ex();
   print('My name is ${obj.name='favaz'}');
   Ex.show();
@@ -1218,16 +1234,352 @@ class demo{
     print(age);
   }
 }
-void main81(){
+void main84(){
   demo obj=demo('favaz', 21);
   obj.show();
 }
 
+//Super keyword   (used to call a variable if the instance variable 0f 2 classes are same)cannot call super in main function
+class parent{
+  int a=10;
+}
+class child extends parent{
+ int a=20;
+ void show(){
+   print('sum=${a+super.a}');
+ }
+}
+
+void main85(){
+  child obj=child();
+  obj.show();
+}
+
+//example program
+class x{
+  String name='favaz';
+  int age=21;
+ void show1(){
+   print('my name is $name');
+   print('iam $age years old');
+ }
+}
+class y extends x{
+  String name='nihal';
+  int age=21;
+  void show(){
+    print('my name is ${super.name}');
+    print('iam ${super.age} years old');
+    show1();
+  }
+
+}
+void main86(){
+  y obj=y();
+  obj.show();
+}
+
+//super constructor
+class w{
+  w(int a){
+    print('parent constructor=$a');
+  }
+}
+class e extends w{
+  e() : super(100){
+    print('child class constructor');
+  }
+}
+void main87(){
+  e obj=e();
+}
 
 
+//method overriding
+class q{
+  void g(int a, int b){
+    print('a=$a');
+    print('b=$b');
+  }
+}
+class f extends q{
+  @override
+  void g(int c,int d){
+    print('sum=${c+d}');
+    super.g(2, 3);
+  }
+}
+void main88(){
+  f obj=f();
+  obj.g(2, 3);
+}
 
+//abstraction (data hiding)
+abstract class abc{
+  int z=10;
+  void sh(){
+    print('hello');
+  }
+  void add();
+}
+class def extends abc{
+  @override
+  void add() {
+    print("sum=${20+z}");
+  }}
+void main89(){
+  def obj=def();
+  obj.sh();
+  obj.add();
+}
 
+//interface (using implements keyword)
+class l{
+  int a=10,b=20;
+  void sho(){
+    print('hi favaz');
+  }
+  void maths(){
+    print('mul=${a*b}');
+  }
+}
+class k implements l{
+  @override
+  int a=30;
+  @override
+  int b=40;
 
+  @override
+  void maths() {
+    print('diff=${a-b}');
+  }
+
+  @override
+  void sho() {
+    print('hello admin');
+  }
+}
+void main90(){
+ k obj=k();
+ obj.maths();
+ obj.sho();
+}
+
+//multiple inheritance (2 parent and 1 child)
+class father{
+  void fdetails(String name,int age,String job){}
+}
+class mother{
+  void mdetails(String name,int age,String job){}
+}
+class childd implements father,mother{
+  void cdetails(String name, int age, int std) {
+    print('CHILD DETAILS');
+    print('name=$name');
+    print('age=$age');
+    print('class=$std');
+  }
+
+  @override
+  void fdetails(String name, int age, String job) {
+    print('FATHER DETAILS');
+     print('name=$name');
+     print('age=$age');
+     print('job=$job');
+  }
+
+  @override
+  void mdetails(String name, int age, String job) {
+    print('MOTHER DETAILS');
+     print('name=$name');
+     print('age=$age');
+     print('job=$job');
+  }
+}
+void main91(){
+  childd obj=childd();
+  obj.cdetails('arun', 12, 7);
+  obj.fdetails('john', 44, 'engineer');
+  obj.mdetails('anna', 33, 'house wife');
+}
+
+//print your details using multiple inheritance
+class school{
+  void schdetails(String name,String place,String batch){}
+}
+class college{
+  void cllgedetails(String name,String place,String batch){}
+}
+class meh implements school,college{
+  void mydetails(String name, int age, String place) {
+    print('MY DETAILS');
+    print('Iam $name coming from $place. I am $age years old');
+  }
+  @override
+  void cllgedetails(String name, String place, String batch) {
+    print('SCHOOL DETAILS');
+    print('name of the school:$name');
+    print('place of the school:$place');
+    print('batch in school:$batch');
+  }
+
+  @override
+  void schdetails(String name, String place, String batch) {
+    print('COLLEGE DETAILS');
+    print('name of the college:$name');
+    print('place of college:$place');
+    print('batch in college:$batch');
+  }
+}
+void main92(){
+  meh obj=meh();
+  obj.mydetails('muhammed favaz', 21, 'kannur');
+  obj.schdetails('st,michaels', 'kannur', 'computer science');
+  obj.cllgedetails('naher', 'kannur', 'BCA');
+}
+
+//mixin
+mixin a{
+  int x=10;
+  void show(){
+    print('show function');
+  }
+  void i();
+}
+mixin b{
+  int y=20;
+  void view(){
+    print('view function');
+  }
+}
+class C with a,b{
+  @override
+  void i() {
+    print('i function');
+  }
+}
+void main93(){
+  C obj=C();
+  obj.view();
+  obj.show();
+  obj.i();
+  print('sum=${obj.x+obj.y}');
+}
+
+//Exception handling (try catch method)
+void main94(){
+  print('hello');
+  try{
+    int n=10~/0;
+    print(n);
+  }catch(e){
+    print('exception occurred :$e'); //shows us the exception name!!
+  }
+  print('thank you');
+}
+
+//finally keyword
+void main95(){
+  print('hello');
+  try{
+    int n=10~/0;
+    print(n);
+  }catch(e){
+    print('exception occurred :$e'); //shows us the exception name!!
+  }finally{
+    print('finally keyword will execute the code inside the block all the time');
+  }
+  print('thank you');
+}
+
+//sample program(throw exception)
+void show4(int age){
+  if(age<18){
+    throw Exception('age is less than 18');
+  }else{
+    print('eligible to vote');
+  }
+}
+void main96(){
+  try {
+    show4(12);
+  }catch(e){
+  print(e);}
+}
+
+//custom exception(creating our own exception by calling main exception)
+class Myexception implements Exception{
+  String msg;
+  Myexception(this.msg);
+
+  @override
+  String toString(){
+    return msg;
+  }}
+void show5(double mark){
+  if(mark<40){
+    throw Myexception('mark is less than 40');
+  }else{
+    print('passed');
+  }
+}
+void main97(){
+  try {
+    show5(40);
+  }catch(e){
+    print(e);
+  }
+}
+
+//program to create a custom exception
+class PasswordException implements Exception {
+  String msg;
+  PasswordException(this.msg);
+
+  @override
+  String toString() {
+    return msg;
+  }
+}
+
+void main98() {
+  var password = "abcd5";
+
+  try {
+    if (password.length < 5) {
+      throw PasswordException("Password length should be more than 5" );
+    }else{
+      print('correct password');
+    }
+  } on PasswordException catch (e) {
+    print(e.toString());
+  }
+}
+
+//typedef
+typedef me(int num1, int num2);
+addtion(int a,int b){
+  print('add=${a+b}');
+}
+subtraction(int a,int b){
+  print('sub=${a-b}');
+}
+multiplcation(int a,int b,int c){
+  print('mul=${a*b*c}');
+}
+show7(String n,int a){
+  print('my name is $n and iam $a years old');
+}
+void main99(){
+  me a;
+  a=addtion;
+  addtion(3, 5);
+  addtion(6, 13);
+  a=subtraction;
+  subtraction(9, 3);
+  subtraction(12, 3);
+  show7('favaz', 12);
+}
 
 
 
