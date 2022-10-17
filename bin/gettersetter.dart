@@ -7,4 +7,3 @@ void main(){
   print(obj.name);
   print(obj.age);
 }
-///

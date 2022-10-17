@@ -1600,8 +1600,18 @@ class Demo{
     this.age=age;
   }
 }
-//(remaining in getter setter dart file)
+//(remaining in gettersetter dart file)
 
+//callable function(can use object as a function if we use call function)
+class callable {
+  String call(String name, int age) => '$name, $age';
+}
+void main100(){
+  callable obj=callable();
+  print(obj('favaz',21));
+  var out=obj('nihal',21);
+  print(out);
+}
 
 
 
