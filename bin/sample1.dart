@@ -1582,10 +1582,25 @@ void main99(){
 }
 
 
+//Getter and Setter (refer class recording 17/10/22)
+class Demo{
+  String name='favaz';
+  int age=21;
 
-
-
-
+  String get fetchdata1{
+    return name;
+  }
+  int get fetchdata2{
+    return age;
+  }
+  void set setdata1(String name){
+    this.name=name;
+  }
+  void set setdata2(int age){
+    this.age=age;
+  }
+}
+//(remaining in getter setter dart file)
 
 
 
