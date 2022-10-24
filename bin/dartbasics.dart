@@ -106,7 +106,7 @@ void main4(){
 }
 
 
-//(var and dynammic example)
+//(var and dynamic example)
 
 void main5(){
 
@@ -120,6 +120,7 @@ void main5(){
 
 
   print('my name is $name1');
+  print(name2);
 }
 
 //final(used to fix a value..ie..cannot be changed later)
@@ -206,7 +207,7 @@ void main9(){
 //example2
 
 void student(String name,int age,double mark){
-      print('name of the student is $name');
+  print('name of the student is $name');
   print('age of  $name is $age');
   print('mark of $name is $mark');
 
@@ -383,13 +384,13 @@ void main25() {
 
 void main26(){
   print('enter your name');
-  String?name=stdin.readLineSync();
+  String name=stdin.readLineSync()!;
   print('hi $name');
   print('enter your age');
-  int?age=int.parse(stdin.readLineSync()!); // ! is used for null safety
+  int age=int.parse(stdin.readLineSync()!); // ! is used for null safety
   print('your age is $age');
   print('enter your cgpa');
-  double?cgpa=double.parse(stdin.readLineSync()!);
+  double cgpa=double.parse(stdin.readLineSync()!);
   print("your cgpa is $cgpa");
 }
 
@@ -422,7 +423,7 @@ void main28()
 void main29()
 {
   print('enter your name');
-  var name=stdin.readLineSync();
+  String name=stdin.readLineSync()!;
   print('enter your place');
   var place=stdin.readLineSync();
   print('enter your email address');
@@ -908,7 +909,7 @@ void main68() {
 }
 
 //QUEUE
-void mai69(){
+void main69(){
   Queue<int> a=Queue();
   a.add(1);
   a.add(2);
@@ -1000,7 +1001,7 @@ void func4(int a,int b,{int?c}){
 }
 ///5. optional named parameterized function
 void func5(int a,{required int b,int?c }){
-  int sum=a+b;
+  int sum=a+b+c!;
   print('$sum');
 }
 ///6. optional parameterized function with default value
@@ -1009,12 +1010,12 @@ void func6(int a,{int?b,int c=20}){
   print('$sum');
 }
 
-void main72(){
+void main(){
   func1();
   func2(10,20);
   print(func3());
-  func4(10, 20,c:30);
-  func5(20, b: 10);
+  func4(10, 20,c:11);
+  func5(20, b: 10,c:12);
   func6(20,b:2);
 }
 
@@ -1095,7 +1096,7 @@ void main76(){
 
 //Assert statement
 void main77(){
-  int age=10;
+  int age=19;
   // if(age>=18){
   //   print('u are eligible');
   // }else{
@@ -1544,7 +1545,6 @@ class PasswordException implements Exception {
 
 void main98() {
   var password = "abcd5";
-
   try {
     if (password.length < 5) {
       throw PasswordException("Password length should be more than 5" );
@@ -1552,7 +1552,7 @@ void main98() {
       print('correct password');
     }
   } on PasswordException catch (e) {
-    print(e.toString());
+    print(e);
   }
 }
 
@@ -1593,7 +1593,7 @@ class Demo{
   int get fetchdata2{
     return age;
   }
-  void set setdata1(String name){
+  void set setdata1(int age){
     this.name=name;
   }
   void set setdata2(int age){

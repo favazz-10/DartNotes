@@ -1,4 +1,4 @@
-import 'sample1.dart';
+import 'dartbasics.dart';
 
 class branch1 extends bank{
   String branch='kannur';
